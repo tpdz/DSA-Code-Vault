@@ -1,0 +1,1 @@
+{"name":"Local: pangram","url":"c:\\Users\\msipc\\OneDrive\\Máy tính\\thi thu lan 1 yugi\\pangram.cpp","tests":[{"id":1782198591222,"input":"3\nyugihacker\nabcdefghjiklmnopqrstvwxyz\nmissu\n","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\msipc\\OneDrive\\Máy tính\\thi thu lan 1 yugi\\pangram.cpp","group":"local","local":true}

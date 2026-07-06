@@ -1,0 +1,1 @@
+{"name":"Local: F","url":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Bang thua (RMQ . Sparse table)\\F.cpp","tests":[{"id":1781442730921,"input":"9 2\n0 3 2 -1 0 1 4 0 2\n0 8\n2 6\n","output":"6\n5\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Bang thua (RMQ . Sparse table)\\F.cpp","group":"local","local":true}

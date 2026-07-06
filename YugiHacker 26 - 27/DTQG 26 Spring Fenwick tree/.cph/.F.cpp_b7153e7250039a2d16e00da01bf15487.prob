@@ -1,0 +1,1 @@
+{"name":"Local: F","url":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Fenwick tree\\F.cpp","tests":[{"id":1781551383807,"input":"7\nabcdbbd\n6\n2 3 6\n1 5 z\n2 1 1\n1 4 a\n1 7 d\n2 1 7\n","output":"3\n1\n5\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Fenwick tree\\F.cpp","group":"local","local":true}

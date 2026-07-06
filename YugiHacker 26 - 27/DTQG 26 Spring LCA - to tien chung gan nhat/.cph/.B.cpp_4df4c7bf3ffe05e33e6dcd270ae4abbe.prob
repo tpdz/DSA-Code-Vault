@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring LCA - to tien chung gan nhat\\B.cpp","tests":[{"id":1781253912124,"input":"5 3\n1 1 3 3\n4 5\n2 5\n1 4\n","output":"3\n1\n1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring LCA - to tien chung gan nhat\\B.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: E","url":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Segment tree 1\\E.cpp","tests":[{"id":1781541253837,"input":"5 7\n1 1 0 1 0\n2 1\n2 2\n2 3\n1 3\n2 4\n1 1\n2 1\n","output":"1\n2\n4\n4\n2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Segment tree 1\\E.cpp","group":"local","local":true}

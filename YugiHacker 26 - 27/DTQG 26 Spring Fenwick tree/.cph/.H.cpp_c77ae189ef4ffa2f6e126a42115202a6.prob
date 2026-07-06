@@ -1,0 +1,1 @@
+{"name":"Local: H","url":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Fenwick tree\\H.cpp","tests":[{"id":1781556499449,"input":"10 5\n1 2 3\n2 1 4\n1 6 5\n1 10 -3\n2 2 10\n","output":"3\n5\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Fenwick tree\\H.cpp","group":"local","local":true}

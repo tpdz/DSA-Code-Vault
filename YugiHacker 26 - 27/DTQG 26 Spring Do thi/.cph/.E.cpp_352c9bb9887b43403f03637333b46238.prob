@@ -1,0 +1,1 @@
+{"name":"Local: E","url":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Do thi\\E.cpp","tests":[{"id":1776096220299,"input":"10 2\n10 8\n9\n6 7\n7 5\n5 8\n8 1\n1 10\n10 3\n3 4\n4 9\n9 2\n","output":"1 4 1 2 1 3 2 0 3 0 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Do thi\\E.cpp","group":"local","local":true}

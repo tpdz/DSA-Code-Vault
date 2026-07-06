@@ -1,0 +1,1 @@
+{"name":"Local: B00","url":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Quy hoach dong 2\\B00.cpp","tests":[{"id":1777312410590,"input":"5\n4 4 3 12 8\n","output":"4"},{"id":1777312577989,"input":"1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\cpp\\tincpp\\Other\\tm\\DTQG 26 Spring Quy hoach dong 2\\B00.cpp","group":"local","local":true}
