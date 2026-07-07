@@ -12,7 +12,7 @@ using namespace std;
 #define ngtphuoc ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define AC_AC_AC(filename) freopen(filename".inp","r",stdin); freopen(filename".out","w",stdout);
 
-const int N = 1e6+1;
+const int N = 250001;
 const ll inf = 1e17;
 ll n, a[N], l0[N], l1[N], l2[N], r0[N], r1[N], r2[N], hcase[N];
 ll mi[N][20], ma[N][20], H[N][20];
