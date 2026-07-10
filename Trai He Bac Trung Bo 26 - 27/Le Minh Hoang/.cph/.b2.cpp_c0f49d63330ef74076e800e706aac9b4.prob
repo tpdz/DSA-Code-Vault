@@ -1,0 +1,1 @@
+{"name":"Local: b2","url":"c:\\CP\\Trai He Bac Trung Bo 26 - 27\\Le Minh Hoang\\b2.cpp","tests":[{"id":1783673282774,"input":"12 6\n4 9 5 4 8 4 5 4 8 6 9 7\n26\n39\n100\n10\n2\n1","output":"6\n8\n12\n3\n1\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\CP\\Trai He Bac Trung Bo 26 - 27\\Le Minh Hoang\\b2.cpp","group":"local","local":true}
