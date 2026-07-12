@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
+#define ld long double
 #define ALL(v) (v).begin(), (v).end()
 #define FOR(i, a, b) for(int i = (a), _b = (b); i <= _b; ++i)
 #define FORD(i, a, b) for(int i = (a), _b = (b); i >= _b; --i)
@@ -12,49 +13,32 @@ using namespace std;
 #define ngtphuoc ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define AC_AC_AC(filename) freopen(filename".inp","r",stdin); freopen(filename".out","w",stdout);
 
-ll n, a[100005], l, r;
+struct Point{
+    ll x, y;
+};
 
-ll f(ll x){
-    ll ans = -1;
-
-    if(a[1]-x >= l && a[1]-x <= r) ans = a[1]-x;
-
-    FOR(i, 1, n){
-        ll v = a[i]-x;
-        if(i > 1 && v >= l && v <= r && v-a[i-1] >= x) ans = v;
-
-        v = a[i]+x;
-        if(i < n && v >= l && v <= r && a[i+1]-v >= x) ans = v;
-    }
-
-    if(a[n]+x >= l && a[n]+x <= r) ans = a[n]+x;
-
-    return ans;
-}
+Point a[1000006];
 
 int main(){
     ngtphuoc
     //AC_AC_AC("VOI27")
 
-    cin>>n>>l>>r;
-
-    FOR(i, 1, n) cin>>a[i];
-
-    sort(a+1, a+1+n);
-
-    ll l = 0, r = 2e18, mid, ans = -1;
-
-    while(l <= r){
-        mid = (l+r)>>1;
-        ll fm = f(mid);
-        if(fm != -1){
-            ans = fm;
-            l = mid+1;
-        }
-        else r = mid-1;
+    int n; cin>>n;
+    FOR(i, 0, n-1){
+        cin>>a[i].x>>a[i].y;
     }
 
-    cout<<ans;
+    ld ans = 0;
+
+    FOR(i, 0, n-1){
+        int i1 = (i+1)%n;
+
+        ans += (a[i].x-a[i1].x) * (a[i].y + a[i1].y);
+    }
+
+    ans = abs(ans / 2.0);
+
+    cout<<fixed<<setprecision(1)<<ans;
 }
 
 

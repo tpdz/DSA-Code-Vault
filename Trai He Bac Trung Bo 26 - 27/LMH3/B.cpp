@@ -12,49 +12,71 @@ using namespace std;
 #define ngtphuoc ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define AC_AC_AC(filename) freopen(filename".inp","r",stdin); freopen(filename".out","w",stdout);
 
-ll n, a[100005], l, r;
+const ll inf = 5e17, N = 1e4+1;
 
-ll f(ll x){
-    ll ans = -1;
+int curl, curr;
+ll cur;
 
-    if(a[1]-x >= l && a[1]-x <= r) ans = a[1]-x;
+ll n, q, a[N], dp_cur[N], dp_prev[N], d[N];
 
-    FOR(i, 1, n){
-        ll v = a[i]-x;
-        if(i > 1 && v >= l && v <= r && v-a[i-1] >= x) ans = v;
+void add(int i){
+    if(!d[a[i]]) ++cur;
+    ++d[a[i]];
+}
 
-        v = a[i]+x;
-        if(i < n && v >= l && v <= r && a[i+1]-v >= x) ans = v;
+void rem(int i){
+    --d[a[i]];
+    if(!d[a[i]]) --cur;
+}
+
+
+ll get(int l, int r){
+    while(curl > l) --curl, add(curl);
+    while(curr < r) ++curr, add(curr);
+    while(curl < l) rem(curl), ++curl;
+    while(curr > r) rem(curr), --curr;
+    return cur;
+}
+
+void solve(int l, int r, int optl, int optr){
+    if(l > r) return;
+
+    int m = (l+r)>>1, pos = -1;
+    dp_cur[m] = -inf;
+
+    FOR(i, optl, min(m-1, optr)){
+        if(dp_prev[i] == -inf) continue;
+
+        ll cost = get(i+1, m);
+        if(dp_prev[i]+cost > dp_cur[m]){
+            dp_cur[m] = dp_prev[i]+cost;
+            pos = i;
+        }
     }
 
-    if(a[n]+x >= l && a[n]+x <= r) ans = a[n]+x;
-
-    return ans;
+    solve(l, m-1, optl, pos);
+    solve(m+1, r, pos, optr);
 }
 
 int main(){
     ngtphuoc
     //AC_AC_AC("VOI27")
 
-    cin>>n>>l>>r;
+    cin>>n>>q;
 
     FOR(i, 1, n) cin>>a[i];
 
-    sort(a+1, a+1+n);
+    FOR(i, 1, n) dp_prev[i] = -inf;
+    FOR(s, 1, q){
 
-    ll l = 0, r = 2e18, mid, ans = -1;
+        solve(s, n, s-1, n-1);
 
-    while(l <= r){
-        mid = (l+r)>>1;
-        ll fm = f(mid);
-        if(fm != -1){
-            ans = fm;
-            l = mid+1;
-        }
-        else r = mid-1;
+        FOR(i, 1, n) dp_prev[i] = dp_cur[i];
+
+        cout<<dp_cur[n]<<' ';
     }
 
-    cout<<ans;
+
 }
 
 

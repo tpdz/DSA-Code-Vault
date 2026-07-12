@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
+#define ld long double
 #define ALL(v) (v).begin(), (v).end()
 #define FOR(i, a, b) for(int i = (a), _b = (b); i <= _b; ++i)
 #define FORD(i, a, b) for(int i = (a), _b = (b); i >= _b; --i)
@@ -12,49 +13,44 @@ using namespace std;
 #define ngtphuoc ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define AC_AC_AC(filename) freopen(filename".inp","r",stdin); freopen(filename".out","w",stdout);
 
-ll n, a[100005], l, r;
+struct Tvector{
+    ll x, y;
 
-ll f(ll x){
-    ll ans = -1;
-
-    if(a[1]-x >= l && a[1]-x <= r) ans = a[1]-x;
-
-    FOR(i, 1, n){
-        ll v = a[i]-x;
-        if(i > 1 && v >= l && v <= r && v-a[i-1] >= x) ans = v;
-
-        v = a[i]+x;
-        if(i < n && v >= l && v <= r && a[i+1]-v >= x) ans = v;
+    Tvector operator - (const Tvector &oth) const{
+        return {x-oth.x, y-oth.y};
     }
 
-    if(a[n]+x >= l && a[n]+x <= r) ans = a[n]+x;
+    ll operator * (const Tvector &oth) const{
+        return (x*oth.y - y*oth.x);
+    }
+};
 
-    return ans;
+ld dis(Tvector x, Tvector y){
+    ld dx = x.x - y.x;
+    ld dy = x.y - y.y;
+    return sqrtl(dx*dx + dy*dy);
 }
 
 int main(){
     ngtphuoc
     //AC_AC_AC("VOI27")
 
-    cin>>n>>l>>r;
+    Tvector A, B, M, N;
 
-    FOR(i, 1, n) cin>>a[i];
+    cin>>A.x>>A.y;
+    cin>>B.x>>B.y;
+    cin>>M.x>>M.y;
+    cin>>N.x>>N.y;
 
-    sort(a+1, a+1+n);
+    bool a = (((B - A) * (M - A) > 0) != ((B - A) * (N - A) > 0));
+    bool b = (((N - M) * (A - M) > 0) != ((N - M) * (B - M) > 0));
 
-    ll l = 0, r = 2e18, mid, ans = -1;
-
-    while(l <= r){
-        mid = (l+r)>>1;
-        ll fm = f(mid);
-        if(fm != -1){
-            ans = fm;
-            l = mid+1;
-        }
-        else r = mid-1;
+    if(a && b){
+        cout<<fixed<<setprecision(4)<<min(dis(M, A) + dis(A, N), dis(M, B) + dis(B, N));
     }
-
-    cout<<ans;
+    else{
+        cout<<fixed<<setprecision(4)<<dis(M, N);
+    }
 }
 
 

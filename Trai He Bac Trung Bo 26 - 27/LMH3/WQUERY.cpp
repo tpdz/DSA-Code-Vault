@@ -12,49 +12,72 @@ using namespace std;
 #define ngtphuoc ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define AC_AC_AC(filename) freopen(filename".inp","r",stdin); freopen(filename".out","w",stdout);
 
-ll n, a[100005], l, r;
+const int N = 1e5+1;
+int s;
+struct queries{
+    int l, r, id;
+};
 
-ll f(ll x){
-    ll ans = -1;
+queries qu[N];
 
-    if(a[1]-x >= l && a[1]-x <= r) ans = a[1]-x;
+bool cmp(queries x, queries y){
+    if(x.l/s != y.l/s) return x.l/s < y.l/s;
+    return x.r < y.r;
+}
 
-    FOR(i, 1, n){
-        ll v = a[i]-x;
-        if(i > 1 && v >= l && v <= r && v-a[i-1] >= x) ans = v;
+ll a[N], d[1000006], n, q, ans[N];
 
-        v = a[i]+x;
-        if(i < n && v >= l && v <= r && a[i+1]-v >= x) ans = v;
+ll cur;
+int curl, curr;
+
+void add(int i){
+    ll v = a[i];
+    cur -= d[v]*d[v]*v;
+    ++d[v];
+    cur += d[v]*d[v]*v;
+}
+
+void rem(int i){
+    ll v = a[i];
+    cur -= d[v]*d[v]*v;
+    --d[v];
+    cur += d[v]*d[v]*v;
+}
+
+ll get(int l, int r){
+    while(curl > l) --curl, add(curl);
+    while(curr < r) ++curr, add(curr);
+    while(curl < l) rem(curl), ++curl;
+    while(curr > r) rem(curr), --curr;
+    return cur;
+}
+
+void mo(){
+    FOR(i, 1, q){
+        ans[qu[i].id] = get(qu[i].l, qu[i].r);
     }
-
-    if(a[n]+x >= l && a[n]+x <= r) ans = a[n]+x;
-
-    return ans;
 }
 
 int main(){
     ngtphuoc
     //AC_AC_AC("VOI27")
 
-    cin>>n>>l>>r;
+    cin>>n>>q;
+    s = sqrt(n);
 
     FOR(i, 1, n) cin>>a[i];
 
-    sort(a+1, a+1+n);
-
-    ll l = 0, r = 2e18, mid, ans = -1;
-
-    while(l <= r){
-        mid = (l+r)>>1;
-        ll fm = f(mid);
-        if(fm != -1){
-            ans = fm;
-            l = mid+1;
-        }
-        else r = mid-1;
+    FOR(i, 1, q){
+        cin>>qu[i].l>>qu[i].r, qu[i].id = i;
+        ++qu[i].l;
+        ++qu[i].r;
     }
 
-    cout<<ans;
+    sort(qu+1, qu+1+q, cmp);
+    mo();
+
+    FOR(i, 1, q) cout<<ans[i]<<'\n';
+
 }
 
 
