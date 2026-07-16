@@ -1,0 +1,1 @@
+{"name":"Local: J","url":"c:\\CP\\Trai He Bac Trung Bo 26 - 27\\Do Duc Dong\\J.cpp","tests":[{"id":1784084307411,"input":"4 6\n8 12 7 10\n? 2\n! 1 5\n? 1\n! 3 4\n! 2 6\n? 3\n","output":"1\n1\n2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\CP\\Trai He Bac Trung Bo 26 - 27\\Do Duc Dong\\J.cpp","group":"local","local":true}

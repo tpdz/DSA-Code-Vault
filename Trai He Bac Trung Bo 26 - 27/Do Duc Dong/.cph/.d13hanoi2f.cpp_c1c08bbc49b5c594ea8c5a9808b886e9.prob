@@ -1,0 +1,1 @@
+{"name":"Local: d13hanoi2f","url":"c:\\CP\\Trai He Bac Trung Bo 26 - 27\\Do Duc Dong\\d13hanoi2f.cpp","tests":[{"id":1784103093882,"input":"1\n0 1 0\n0 0 1\n1 0 0\n","output":"2\nAB\nBC"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\CP\\Trai He Bac Trung Bo 26 - 27\\Do Duc Dong\\d13hanoi2f.cpp","group":"local","local":true}

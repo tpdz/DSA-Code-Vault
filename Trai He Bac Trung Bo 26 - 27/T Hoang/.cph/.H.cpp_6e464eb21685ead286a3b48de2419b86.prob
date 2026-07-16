@@ -1,0 +1,1 @@
+{"name":"Local: H","url":"c:\\CP\\Trai He Bac Trung Bo 26 - 27\\T Hoang\\H.cpp","tests":[{"id":1784101449853,"input":"6\n12345\n678901\n2026051\n98765432\n123456789\n9876543210\n","output":"32\n32\n5\n256\n512\n1024\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\CP\\Trai He Bac Trung Bo 26 - 27\\T Hoang\\H.cpp","group":"local","local":true}
