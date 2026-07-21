@@ -12,22 +12,51 @@ using namespace std;
 #define ngtphuoc ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define AC_AC_AC(filename) freopen(filename".inp","r",stdin); freopen(filename".out","w",stdout);
 
-ll binpow(ll k, ll e){
-    ll ans = 1;
-    while(e){
-        if(e&1) ans = ans*k%10;
-        k = k*k%10;
-        e >>= 1;
+const int N = 3e5+1, A = 15000000, inf = 1e9;
+int n, a[N], spx[A+1];
+
+vector<int> prime[A+1];
+
+void init(){
+    FOR(i, 1, A) spx[i] = i;
+    FOR(i, 2, A) if(spx[i] == i){
+        for(int j = i; j <= A; j += i) spx[j] = i;
     }
-    return ans;
 }
+
+void pt(int x){
+    while(x>1){
+        int p = spx[x], cnt = 0;
+        while(x%p == 0) ++cnt, x /= p;
+        prime[p].push_back(cnt);
+    }
+}
+
 int main(){
     ngtphuoc
     //AC_AC_AC("VOI27")
 
-    ll k, e;
-    cin>>k>>e;
-    cout<<binpow(k, e);
+    init();
+
+    cin>>n>>a[1];
+
+    int g = a[1];
+    FOR(i, 2, n){
+        cin>>a[i];
+        g = __gcd(a[i], g);
+    }
+
+    FOR(i, 1, n){
+        pt(a[i]/g);
+    }
+
+    int ans = 0;
+    FOR(p, 2, A){
+        ans = max(ans, (int)prime[p].size());
+    }
+
+    cout<<(ans ? n-ans : -1);
+
 }
 
 
