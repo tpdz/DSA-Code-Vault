@@ -77,6 +77,7 @@ signed main(){
         cout<<(get(l, r-1, get_gcd, g) ==  d ? "YES" : "NO")<<'\n';
         //https://share.gemini.google/HlyJ0XaAnsXe
     }
+    //https://share.gemini.google/HlyJ0XaAnsXe
 }
 
 
